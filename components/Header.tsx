@@ -1,6 +1,5 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
-import Image from 'next/image'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
@@ -16,16 +15,8 @@ const Header = () => {
     <header className={headerClass}>
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
-          {/* 绕过复杂的组件导入，直接读取项目里的静态 logo.svg 资源 */}
           <div className="mr-3 flex items-center justify-center">
-            <Image 
-              src="/data/logo.svg" 
-              alt="Logo" 
-              width={38} 
-              height={38} 
-              className="h-9 w-9 object-contain"
-              priority
-            />
+            <img src="/data/logo.svg" alt="Logo" className="h-9 w-9 object-contain" />
           </div>
           {typeof siteMetadata.headerTitle === 'string' ? (
             <div className="hidden h-6 text-2xl font-semibold sm:block">
