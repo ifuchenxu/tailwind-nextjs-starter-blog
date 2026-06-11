@@ -19,7 +19,8 @@ export default function Home({ posts }) {
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts found.'}
+          {/* 1. 这里汉化了：无文章时的提示 */}
+          {!posts.length && '暂无文章。'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
             return (
@@ -57,15 +58,16 @@ export default function Home({ posts }) {
                         <Link
                           href={`/blog/${slug}`}
                           className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                          aria-label={`Read more: "${title}"`}
+                          {/* 2. 这里汉化了：读屏无障碍标签 */}
+                          aria-label={`阅读更多: "${title}"`}
                         >
-                          阅读全文 &rarr;
+                          阅读更多 &rarr;
                         </Link>
                       </div>
                     </div>
                   </div>
                 </article>
-              </li>
+              </td>
             )
           })}
         </ul>
@@ -83,7 +85,8 @@ export default function Home({ posts }) {
       )}
       {siteMetadata.newsletter?.provider && (
         <div className="flex items-center justify-center pt-4">
-          <NewsletterForm />
+          {/* 3. 这里注入了中文标题参数，为以后功能上线做准备 */}
+          <NewsletterForm title="订阅最新动态" />
         </div>
       )}
     </>
