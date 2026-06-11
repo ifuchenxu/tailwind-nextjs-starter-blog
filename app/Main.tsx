@@ -77,7 +77,7 @@ export default function Home({ posts }) {
             className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             aria-label="All posts"
           >
-            All Posts &rarr;
+            查看全部 &rarr;
           </Link>
         </div>
       )}
