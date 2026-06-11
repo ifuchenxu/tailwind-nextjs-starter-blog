@@ -65,7 +65,7 @@ export default function Home({ posts }) {
                     </div>
                   </div>
                 </article>
-              </td>
+              </li>
             )
           })}
         </ul>
