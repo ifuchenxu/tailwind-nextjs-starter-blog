@@ -16,7 +16,8 @@ const Header = () => {
       <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
           <div className="mr-3 flex items-center justify-center">
-            <img src="/data/logo.svg" alt="Logo" className="h-9 w-9 object-contain" />
+            {/* 这里的路径改成了根目录，专门读取 public 文件夹下的图片 */}
+            <img src="/logo.svg" alt="Logo" className="h-9 w-9 object-contain" />
           </div>
           {typeof siteMetadata.headerTitle === 'string' ? (
             <div className="hidden h-6 text-2xl font-semibold sm:block">
